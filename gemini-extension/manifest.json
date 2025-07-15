@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini AI Popup",
+  "version": "1.0",
+  "description": "Chat with Gemini on any website.",
+  "permissions": ["scripting"],
+  "host_permissions": [
+    "http://localhost:8080/*",
+    "https://generativelanguage.googleapis.com/*"
+    
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["popup.js"]
+    }
+  ],
+  "icons": {
+    "128": "icon.png"
+  }
+}
