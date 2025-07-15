@@ -3,6 +3,7 @@ package com.pop.ai.service;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.*;
 
@@ -10,8 +11,10 @@ import java.util.*;
 public class GeminiService {
 
     private final RestTemplate restTemplate;
-//    private static final String API_KEY = "AIzaSyCpt3GtFW3BSdEMlnl_s5dU8a67CBC5V84";
-    private static final String API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=";
+    private static final String API_KEY = "";
+//     @Value("${gemini.api.key}")
+//     private String apiKey;
+    private static final String API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key="+API_KEY;
 
     public GeminiService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
